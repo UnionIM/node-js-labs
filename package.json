@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint --ignore-path .gitignore .",
+    "lint:fix": "eslint --fix ./*.js",
+    "format": "prettier --ignore-path .gitignore --check .",
+    "prepare": "husky install",
+    "test": "npm run lint && npm run format"
   },
   "repository": {
     "type": "git",
@@ -18,10 +22,12 @@
   "homepage": "https://github.com/UnionIM/node-js-labs#readme",
   "devDependencies": {
     "eslint": "^8.26.0",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-n": "^15.3.0",
     "eslint-plugin-promise": "^6.1.1",
+    "husky": "^8.0.1",
     "prettier": "2.7.1",
     "sonarlint": "^1.1.0"
   }
