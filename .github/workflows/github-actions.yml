@@ -11,8 +11,8 @@ jobs:
                   cache: 'npm'
                   cache-dependency-path: '**/package-lock.json'
             - name: Install dependencies
-              run: npm install
+              run: npm ci
             - name: Running Prettier
-              run: npx prettier --check .
+              run: npm run format
             - name: Running ESLint
-              run: npx eslint .
+              run: npm run lint
